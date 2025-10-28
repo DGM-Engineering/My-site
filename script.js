@@ -1,4 +1,9 @@
 // Butona tıklandığında mesaj göster
-document.getElementById("btn").addEventListener("click", function() {
-  document.getElementById("msg").innerText = "Butona tıkladın! 🎉";
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById("btn");
+  const msg = document.getElementById("msg");
+
+  btn.addEventListener("click", function() {
+    msg.innerText = "Butona tıkladın! 🎉";
+  });
 });
