@@ -1,36 +1,97 @@
-body {
+/* Genel Ayarlar */
+body, html {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
-header {
-    background-color: #1a73e8;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 2em;
-}
+a { text-decoration: none; color: inherit; }
 
-nav {
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    background: rgba(26, 115, 232, 0.9);
+    z-index: 1000;
+}
+.navbar .logo { font-weight: 700; font-size: 1.5em; color: white; }
+.nav-links { list-style: none; display: flex; gap: 30px; }
+.nav-links li a { color: white; font-weight: 500; transition: 0.3s; }
+.nav-links li a:hover { color: #ffd700; }
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { background: white; height: 3px; width: 25px; border-radius: 3px; }
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(26,115,232,0.6), rgba(26,115,232,0.6)), url('https://images.unsplash.com/photo-1581091870625-3e1f6c3c67b7') center/cover no-repeat;
     display: flex;
     justify-content: center;
-    background-color: #0b52c1;
-}
-
-nav a {
+    align-items: center;
     color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 15px 0;
-    transition: background 0.3s;
-}
-
-nav a:hover {
-    background-color: #094a9b;
-}
-
-.hero {
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(rgba(26,115,232,0.8), rgba(26,115,232,0.8)), url('https://images.unsplash.com/photo-1581091870625-3e1f6c3c67b7') center/cover no-rep
+}
+.hero-section h1 { font-size: 3em; margin-bottom: 20px; animation: fadeIn 2s; }
+.hero-section p { font-size: 1.5em; margin-bottom: 30px; animation: fadeIn 3s; }
+.btn-primary {
+    background: #ffd700;
+    color: #1a73e8;
+    padding: 15px 30px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.btn-primary:hover { background: white; color: #1a73e8; }
+
+/* Animasyon */
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
+/* About Section */
+.about-section { padding: 100px 50px; background: #f5f5f5; }
+.about-section h2 { text-align: center; margin-bottom: 50px; font-size: 2.5em; }
+.timeline { display: flex; flex-direction: column; gap: 30px; max-width: 800px; margin: auto; }
+.timeline-item { position: relative; padding-left: 50px; }
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 20px; top: 5px;
+    width: 10px; height: 10px;
+    background: #1a73e8;
+    border-radius: 50%;
+}
+.timeline-item .year { font-weight: 700; color: #1a73e8; }
+
+/* Projects Section */
+.projects-section { padding: 100px 50px; }
+.projects-section h2 { text-align: center; margin-bottom: 50px; font-size: 2.5em; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 30px; }
+.project-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s; }
+.project-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
+/* Modals */
+.modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; }
+.modal-content { background: white; padding: 30px; border-radius: 10px; width: 80%; max-width: 600px; position: relative; }
+.close { position: absolute; top: 10px; right: 20px; font-size: 2em; cursor: pointer; }
+
+/* Contact Section */
+.contact-section { padding: 100px 50px; background: #f5f5f5; text-align: center; }
+.contact-section h2 { font-size: 2.5em; margin-bottom: 50px; }
+.contact-section form { display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin: auto; }
+.contact-section input, .contact-section textarea { padding: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 1em; }
+.contact-section button { padding: 15px; border: none; background: #1a73e8; color: white; font-weight: 600; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+.contact-section button:hover { background: #094a9b; }
+
+/* Footer */
+footer { text-align: center; padding: 30px; background: #1a73e8; color: white; }
+
+/* Responsive */
+@media screen and (max-width: 768px){
+    .nav-links { display: none; flex-direction: column; background: rgba(26,115,232,0.95); position: absolute; top: 70px; right: 0; width: 200px; padding: 20px; }
+    .nav-links.active { display: flex; }
+    .hamburger { display: flex; }
+}
