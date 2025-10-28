@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Animasyonlu Demo Site</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Logo</div>
+    <nav class="nav">
+      <a href="#hero">Ana</a>
+      <a href="#features">Özellikler</a>
+      <a href="#contact">İletişim</a>
+      <button id="nav-toggle" aria-label="Menüyü aç">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <h1 class="hero-title">Hoş geldin — Öğrenerek yapıyoruz</h1>
+      <p class="hero-sub">HTML + CSS animasyonları + JavaScript etkileşimi ile adım adım site.</p>
+      <button id="cta" class="btn">Başla</button>
+      <div class="floating-ball" aria-hidden="true"></div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="card">
+        <h3>Hızlı</h3>
+        <p>Yalın ve performanslı yapı.</p>
+      </div>
+      <div class="card">
+        <h3>Etkileşim</h3>
+        <p>JavaScript ile kontrollü animasyonlar.</p>
+      </div>
+      <div class="card">
+        <h3>Responsive</h3>
+        <p>Mobil uyumlu tasarım.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>İletişim</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="İsim" required />
+        <input type="email" name="email" placeholder="Eposta" required />
+        <textarea name="message" placeholder="Mesajınız" rows="4"></textarea>
+        <button type="submit" class="btn">Gönder</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Demo Site — Öğrenerek Yapıyoruz</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
